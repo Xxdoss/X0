@@ -136,6 +136,8 @@ function checkX (){
     if (w.style.display=='block'){
         xsc.textContent = x
         restart_menu.style.display = 'block'
+        restart_menu.style.animation = 'opa 2s ease-in-out 1 forwards'
+        grid.style.animation = 'bl 3s ease-in-out 1 forwards'
         res_img.style.cssText = `background: url('img/x.png'); background-size: 100%;`
         return x++
     }
@@ -211,6 +213,8 @@ function check0 (){
     if (w.style.display=='block'){
         Osc.textContent = O
         restart_menu.style.display = 'block'
+        restart_menu.style.animation = 'opa 2s ease-in-out 1 forwards'
+        grid.style.animation = 'bl 3s ease-in-out 1 forwards'
         res_img.style.cssText = `background: url('img/0.png'); background-size: 100%;`
         return O++
     }
@@ -230,8 +234,10 @@ function clear(){
 function restart (){
     list=[{elem:'1'},{elem:'2'},{elem:'3'},{elem:'4'},{elem:'5'},{elem:'6'},{elem:'7'},{elem:'8'},{elem:'9' }]
     clear ()
-    render( )
+    render ( )
     choice ()
+    grid.style.animation = 'none'
+    grid.style.filter = 'none'
     w.style.display = 'none'
     restart_menu.style.display = 'none'
 }
@@ -246,3 +252,4 @@ res.addEventListener('click',restart)
 
 rest.addEventListener('click',re)
 rest.addEventListener('click',restart)
+
